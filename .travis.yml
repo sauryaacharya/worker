@@ -2,9 +2,9 @@ sudo: required
 services:
   - docker
 
-  script:
-    - docker build -t sauryaacharya/worker .
+script:
+  - docker build -t sauryaacharya/worker .
 
-  after_success:
-    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    - docker push sauryaacharya/worker
+after_succes:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push sauryaacharya/worker
