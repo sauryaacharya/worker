@@ -3,6 +3,8 @@ services:
   - docker
 
   script:
-    - docker build sauryaacharya/worker .
+    - docker build -t sauryaacharya/worker .
+
+  after_success:
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
     - docker push sauryaacharya/worker
